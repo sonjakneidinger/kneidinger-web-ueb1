@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Dynamische Datenseite</title>
 </head>
+
 <body>
 
 <h1>Dynamische Datenseite</h1>
@@ -16,7 +17,14 @@
 
 <script>
   // Lokale Daten
-  const stadtteile = ["Urfahr", "Innere Stadt", "Bindermichel"];
+  const stadtteile = [
+    "Urfahr",
+    "Innere Stadt",
+    "Bindermichel",
+    "Sonja Kneidinger",
+    "Sandra Kneidinger"
+  ];
+
   const liste = document.getElementById("liste-linz");
 
   stadtteile.forEach(s => {
@@ -25,7 +33,7 @@
     liste.appendChild(li);
   });
 
-  // Daten vom Server laden
+  // Daten vom Server laden (Servicecall)
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(data => {
@@ -37,7 +45,6 @@
         sListe.appendChild(li);
       });
     });
-
 </script>
 
 </body>
